@@ -5,12 +5,7 @@ export default {
 </script>
 
 <template>
-    <div>Header</div>
+    <header>Header</header>
 </template>
 
-<style scoped>
-div {
-    height: 100px;
-    background-color: orange;
-}
-</style>
+<style></style>

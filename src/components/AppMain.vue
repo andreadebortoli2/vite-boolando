@@ -11,17 +11,10 @@ export default {
 
 <template>
     <main>
-        <div v-for="n in 6">
+        <div class="container" v-for="n in 6">
             <ProductCard />
         </div>
     </main>
 </template>
 
-<style scoped>
-main {
-    height: 600px;
-    background-color: paleturquoise;
-    display: flex;
-    gap: 1rem;
-}
-</style>
+<style></style>

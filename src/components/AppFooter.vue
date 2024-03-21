@@ -5,13 +5,7 @@ export default {
 </script>
 
 <template>
-    <div>footer</div>
+    <footer>footer</footer>
 </template>
 
-<style scoped>
-div {
-    height: 100px;
-    background-color: black;
-    color: white;
-}
-</style>
+<style></style>

@@ -5,13 +5,9 @@ export default {
 </script>
 
 <template>
-    <div>card</div>
+    <div class="card">card</div>
 </template>
 
-<style scoped>
-div {
-    background-color: palegreen;
-    height: 200px;
-    width: 100px;
-}
+<style lang="scss">
+@use '../assets/partials/ProductCard'
 </style>

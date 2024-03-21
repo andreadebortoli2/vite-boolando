@@ -1,0 +1,6 @@
+@use './Variables' as *;
+
+header {
+    height: 100px;
+    background-color: $header-bg;
+}
