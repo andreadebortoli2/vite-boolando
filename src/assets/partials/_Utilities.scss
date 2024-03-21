@@ -1,0 +1,18 @@
+@use './Variables' as *;
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.icons svg {
+    height: 1rem;
+    fill: $lighter;
+    margin: 0.25rem;
+}

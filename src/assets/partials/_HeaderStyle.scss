@@ -1,6 +1,11 @@
 @use './Variables' as *;
+@use './Utilities' as *;
 
-header {
-    height: 100px;
+#site_header {
     background-color: $header-bg;
+    padding: 0.25rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }

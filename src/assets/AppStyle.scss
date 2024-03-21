@@ -1,3 +1,4 @@
+@use './partials/Variables' as *;
 @use './partials/HeaderStyle';
 @use './partials/MainStyle';
 @use './partials/FooterStyle';
@@ -6,4 +7,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    a {
+        text-decoration: none;
+        color: $lighter;
+        padding: 0.25rem;
+    }
 }
