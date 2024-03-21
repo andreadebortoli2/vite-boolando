@@ -1,7 +1,7 @@
-main {
-    padding: 1rem;
-    height: 600px;
-    background-color: paleturquoise;
-    display: flex;
-    gap: 1rem;
+@use './Variables' as *;
+@use './Utilities' as *;
+
+#site_main {
+    padding-top: 2rem;
+    overflow-y: auto;
 }

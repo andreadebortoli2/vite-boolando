@@ -1,5 +1,5 @@
 @use './Variables' as *;
-@use './Utilities' as *;
+@use './Utilities';
 
 #site_header {
     background-color: $header-bg;
