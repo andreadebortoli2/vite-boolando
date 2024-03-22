@@ -1,74 +1,76 @@
 @use './Variables' as *;
 @use './Utilities';
 
-.item_container {
-    width: 30%;
-    padding: 1rem 0;
-}
-
-.current_price {
-    color: $price;
-    font-size: 0.8rem;
-}
-
-.older_price {
-    text-decoration: line-through;
-    font-size: 0.8rem;
-}
-
 .img_container {
     position: relative;
+
+
+    &:hover .item_img {
+        display: none;
+    }
+
+    &:hover .item_img_hover {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .item_img {
+        max-width: 100%;
+    }
+
+    .item_img_hover {
+        display: none;
+    }
+
+    .add_favourite {
+        position: absolute;
+        top: 2%;
+        right: 0;
+        background-color: $lighter;
+        fill: $darker;
+        padding: 0.25rem 0.60rem;
+
+        svg {
+            height: 20px;
+        }
+
+        &:hover {
+            fill: $price;
+        }
+    }
+
+    .item_marks {
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+
+        .discount {
+            font-size: 0.8rem;
+            font-weight: bolder;
+            color: $lighter;
+            background-color: $discount;
+            padding: 0.25rem;
+        }
+
+        .susteinability_mark {
+            font-size: 0.8rem;
+            font-weight: bolder;
+            color: $lighter;
+            background-color: $sustainability;
+            padding: 0.25rem;
+        }
+    }
 }
 
-.img_container:hover .item_img {
-    display: none;
+.article_info {
+    .current_price {
+        color: $price;
+        font-size: 0.8rem;
+    }
 
-}
-
-.img_container:hover .item_img_hover {
-    display: inline-block;
-    width: 100%;
-}
-
-.item_img {
-    max-width: 100%;
-}
-
-.item_img_hover {
-    display: none;
-}
-
-.add_favourite {
-    position: absolute;
-    top: 2%;
-    right: 0;
-    font-size: 1.5rem;
-    background-color: $lighter;
-    padding: 0.25rem 0.60rem
-}
-
-.add_favourite:hover {
-    color: $price;
-}
-
-.item_marks {
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-}
-
-.discount {
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color: $lighter;
-    background-color: $discount;
-    padding: 0.25rem;
-}
-
-.susteinability_mark {
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color: $lighter;
-    background-color: $sustainability;
-    padding: 0.25rem;
+    .older_price {
+        text-decoration: line-through;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
 }

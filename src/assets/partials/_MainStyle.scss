@@ -3,5 +3,11 @@
 
 #site_main {
     padding-top: 2rem;
+    padding-bottom: 5rem;
     overflow-y: auto;
+
+    .item_container {
+        width: 30%;
+        padding: 1rem 0;
+    }
 }
