@@ -6,14 +6,14 @@ export default {
 
 <template>
     <header id="site_header">
-        <div class="container d-flex">
+        <div class="container">
             <nav>
                 <a href="#">Donna</a>
                 <a href="#">Uomo</a>
                 <a href="#">Bambini</a>
             </nav>
 
-            <img class="logo" src="/images/img/boolean-logo.png" alt="" width="100">
+            <img class="logo" src="/images/img/boolean-logo.png" alt="">
 
             <div class="icons">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

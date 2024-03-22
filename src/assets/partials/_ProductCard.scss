@@ -43,6 +43,7 @@
         position: absolute;
         bottom: 10%;
         left: 0;
+        display: flex;
 
         .discount {
             font-size: 0.8rem;
@@ -50,6 +51,7 @@
             color: $lighter;
             background-color: $discount;
             padding: 0.25rem;
+            margin-right: 0.25rem;
         }
 
         .susteinability_mark {
@@ -63,14 +65,20 @@
 }
 
 .article_info {
-    .current_price {
-        color: $price;
-        font-size: 0.8rem;
-    }
 
-    .older_price {
-        text-decoration: line-through;
-        font-size: 0.8rem;
-        margin-left: 0.5rem;
+    .price {
+        display: flex;
+
+        .current_price {
+            color: $price;
+            font-size: 0.8rem;
+            font-weight: bolder;
+        }
+
+        .older_price {
+            text-decoration: line-through;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
     }
 }

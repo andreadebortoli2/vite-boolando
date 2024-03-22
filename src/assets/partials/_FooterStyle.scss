@@ -10,9 +10,26 @@
     width: 100%;
     z-index: 10;
 
-    .legal_info {
-        font-size: 0.5rem;
-        padding-top: 0.5rem;
-        margin-left: -0.25rem;
+    .left_footer {
+
+        .footer_title {
+            font-weight: bold;
+        }
+
+        .legal_info {
+            font-size: 0.8rem;
+            padding-top: 0.5rem;
+            margin-left: -0.25rem;
+        }
+    }
+
+    .find_us {
+        text-align: center;
+
+        svg {
+            height: 1.5rem;
+            fill: $lighter;
+            margin: 0.25rem;
+        }
     }
 }

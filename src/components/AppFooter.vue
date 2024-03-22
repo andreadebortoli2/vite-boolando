@@ -6,9 +6,9 @@ export default {
 
 <template>
     <footer id="site_footer">
-        <div class="container d-flex">
+        <div class="container">
             <div class="left_footer">
-                <div>Boleando s.r.l</div>
+                <div class="footer_title">Boleando s.r.l</div>
                 <div class="legal_info">
                     <a href="#">Informazioni legali</a>
                     <a href="#">Informativa sulla privacy</a>

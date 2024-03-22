@@ -2,8 +2,7 @@
 @use './Utilities' as *;
 
 #site_main {
-    padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding: 7rem 0;
     overflow-y: auto;
 
     .item_container {

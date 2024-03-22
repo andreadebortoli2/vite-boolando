@@ -17,7 +17,7 @@ export default {
 
 <template>
     <main id="site_main">
-        <div class="container d-flex">
+        <div class="container">
 
             <ProductCard :firstProductImage="product.firstProductImage" :secondProductImage="product.secondProductImage"
                 :discount="product.discount" :sustenability="product.sustenability" :brand="product.brand"

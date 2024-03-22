@@ -3,9 +3,23 @@
 
 #site_header {
     background-color: $header-bg;
-    padding: 0.25rem 0;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+
+    nav {
+        font-weight: bold;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .icons svg {
+        height: 1rem;
+        fill: $lighter;
+        margin: 0.25rem;
+    }
 }

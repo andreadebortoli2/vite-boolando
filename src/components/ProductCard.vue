@@ -34,18 +34,18 @@ export default {
             </div>
 
             <div class="item_marks">
-                <span class="discount" v-if="discount !== 0">-{{ discount }}%</span>
-                <span class="susteinability_mark" v-if="sustenability === true">Sostenibilità</span>
+                <div class="discount" v-if="discount !== 0">-{{ discount }}%</div>
+                <div class="susteinability_mark" v-if="sustenability === true">Sostenibilità</div>
             </div>
         </div>
 
         <div class="article_info">
 
             <div>{{ brand }}</div>
-            <h5>{{ model }}</h5>
+            <h4>{{ model }}</h4>
             <div class="price">
-                <span class="current_price">{{ finalPrice(price, discount) }}&euro;</span>
-                <span class="older_price" v-if="discount !== 0">{{ price }}&euro;</span>
+                <div class="current_price">{{ finalPrice(price, discount) }} &euro;</div>
+                <div class="older_price" v-if="discount !== 0">{{ price }} &euro;</div>
             </div>
 
         </div>

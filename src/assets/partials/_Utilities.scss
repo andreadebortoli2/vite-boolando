@@ -1,19 +1,10 @@
 @use './Variables' as *;
 
-.d-flex {
+.container {
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-}
-
-.icons svg {
-    height: 1rem;
-    fill: $lighter;
-    margin: 0.25rem;
 }
