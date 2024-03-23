@@ -1,84 +1,90 @@
 @use './Variables' as *;
 @use './Utilities';
 
-.img_container {
-    position: relative;
+.item_container {
+    width: 30%;
+    min-width: 300px;
+    padding: 1rem 0;
+    margin: 0 auto;
 
+    .img_container {
+        position: relative;
 
-    &:hover .item_img {
-        display: none;
-    }
-
-    &:hover .item_img_hover {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .item_img {
-        max-width: 100%;
-    }
-
-    .item_img_hover {
-        display: none;
-    }
-
-    .add_favourite {
-        position: absolute;
-        top: 2%;
-        right: 0;
-        background-color: $lighter;
-        fill: $darker;
-        padding: 0.25rem 0.60rem;
-
-        svg {
-            height: 20px;
+        &:hover .item_img {
+            display: none;
         }
 
-        &:hover {
+        &:hover .item_img_hover {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .item_img {
+            max-width: 100%;
+        }
+
+        .item_img_hover {
+            display: none;
+        }
+
+        .favourite {
+            position: absolute;
+            top: 2%;
+            right: 0;
+            background-color: $lighter;
+            fill: $darker;
+            padding: 0.8rem;
+
+            svg {
+                height: 20px;
+            }
+        }
+
+        .added {
             fill: $price;
         }
+
+        .item_marks {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            display: flex;
+
+            .discount {
+                font-size: 0.8rem;
+                font-weight: bolder;
+                color: $lighter;
+                background-color: $discount;
+                padding: 0.25rem;
+                margin-right: 0.25rem;
+            }
+
+            .susteinability {
+                font-size: 0.8rem;
+                font-weight: bolder;
+                color: $lighter;
+                background-color: $sustainability;
+                padding: 0.25rem;
+            }
+        }
     }
 
-    .item_marks {
-        position: absolute;
-        bottom: 10%;
-        left: 0;
-        display: flex;
+    .article_info {
 
-        .discount {
-            font-size: 0.8rem;
-            font-weight: bolder;
-            color: $lighter;
-            background-color: $discount;
-            padding: 0.25rem;
-            margin-right: 0.25rem;
-        }
+        .price {
+            display: flex;
 
-        .susteinability_mark {
-            font-size: 0.8rem;
-            font-weight: bolder;
-            color: $lighter;
-            background-color: $sustainability;
-            padding: 0.25rem;
-        }
-    }
-}
+            .current_price {
+                color: $price;
+                font-size: 0.8rem;
+                font-weight: bolder;
+            }
 
-.article_info {
-
-    .price {
-        display: flex;
-
-        .current_price {
-            color: $price;
-            font-size: 0.8rem;
-            font-weight: bolder;
-        }
-
-        .older_price {
-            text-decoration: line-through;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
+            .older_price {
+                text-decoration: line-through;
+                font-size: 0.8rem;
+                margin-left: 0.5rem;
+            }
         }
     }
 }

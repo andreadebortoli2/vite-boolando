@@ -19,9 +19,9 @@ export default {
     <main id="site_main">
         <div class="container">
 
-            <ProductCard :firstProductImage="product.firstProductImage" :secondProductImage="product.secondProductImage"
-                :discount="product.discount" :sustenability="product.sustenability" :brand="product.brand"
-                :model="product.model" :price="product.price" v-for="product in products" />
+            <ProductCard :frontImage="product.frontImage" :backImage="product.backImage" :brand="product.brand"
+                :name="product.name" :price="product.price" :isInFavourites="product.isInFavourites"
+                :badges="product.badges" v-for="product in products" />
 
         </div>
     </main>

@@ -2,29 +2,38 @@
 export default {
     name: 'ProductCard',
     props: {
-        firstProductImage: String,
-        secondProductImage: String,
-        discount: Number,
-        sustenability: Boolean,
+        frontImage: String,
+        backImage: String,
         brand: String,
-        model: String,
+        name: String,
         price: Number,
+        isInFavourites: Boolean,
+        badges: Array,
+    },
+    data() {
+        return {
+            discount: 0,
+        }
     },
     methods: {
-        finalPrice(price, discount) {
-            return (price - (price * discount / 100)).toFixed(2)
-        }
-    }
+        finalPrice(badges, price, discount) {
+            this.discountFormattation(badges);
+            return (price - (price * discount / 100)).toFixed(2);
+        },
+        discountFormattation(badges) {
+            badges.filter(badge => badge.type === 'discount' ? this.discount = badge.value.replace(/[-%]/g, '') : 0);
+        },
+    },
 }
 </script>
 
 <template>
     <div class="item_container">
         <div class="img_container">
-            <img class="item_img" :src="firstProductImage" alt="">
-            <img class="item_img_hover" :src="secondProductImage" alt="">
+            <img class="item_img" :src="frontImage" alt="">
+            <img class="item_img_hover" :src="backImage" alt="">
 
-            <div class="add_favourite">
+            <div class="favourite" :class="{ added: isInFavourites }" @click="isInFavourites = !isInFavourites">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License -
                         https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -34,17 +43,17 @@ export default {
             </div>
 
             <div class="item_marks">
-                <div class="discount" v-if="discount !== 0">-{{ discount }}%</div>
-                <div class="susteinability_mark" v-if="sustenability === true">Sostenibilità</div>
+                <div v-for="badge in badges" :class="badge.type">{{ badge.value }}</div>
             </div>
+
         </div>
 
         <div class="article_info">
 
             <div>{{ brand }}</div>
-            <h4>{{ model }}</h4>
+            <h4>{{ name }}</h4>
             <div class="price">
-                <div class="current_price">{{ finalPrice(price, discount) }} &euro;</div>
+                <div class="current_price">{{ finalPrice(badges, price, discount) }} &euro;</div>
                 <div class="older_price" v-if="discount !== 0">{{ price }} &euro;</div>
             </div>
 
