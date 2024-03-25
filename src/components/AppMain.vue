@@ -1,7 +1,8 @@
 <script>
 import ProductCard from './ProductCard.vue';
 // import { products } from '../data'
-import axios from 'axios';
+// import axios from 'axios';
+import { store } from '../store'
 
 export default {
     name: 'AppMain',
@@ -10,14 +11,16 @@ export default {
     },
     data() {
         return {
-            products: []
+            // products: []
+            store
         }
     },
     mounted() {
-        axios.get('http://localhost:3000/products').then(response => {
+        /* axios.get('http://localhost:3000/products').then(response => {
             // console.log(response.data);
             this.products = response.data
-        })
+        }) */
+        store.getProductsFromApi(store.productsApiUrl)
     }
 }
 </script>
@@ -28,7 +31,7 @@ export default {
 
             <ProductCard :frontImage="product.frontImage" :backImage="product.backImage" :brand="product.brand"
                 :name="product.name" :price="product.price" :isInFavourites="product.isInFavourites"
-                :badges="product.badges" v-for="product in products" />
+                :badges="product.badges" v-for="product in store.products" />
 
         </div>
     </main>
