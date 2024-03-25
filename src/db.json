@@ -1,0 +1,97 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "frontImage": "/images/img/1.webp",
+            "backImage": "/images/img/1b.webp",
+            "brand": "Levi's",
+            "name": "RELAXED FIT TEE UNISEX",
+            "price": 29.99,
+            "isInFavourites": false,
+            "badges": [
+                {
+                    "type": "discount",
+                    "value": "- 50%"
+                },
+                {
+                    "type": "susteinability",
+                    "value": "Sostenibilità"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "frontImage": "/images/img/2.webp",
+            "backImage": "/images/img/2b.webp",
+            "brand": "Guess",
+            "name": "ROSES TEE",
+            "price": 29.99,
+            "isInFavourites": false,
+            "badges": [
+                {
+                    "type": "discount",
+                    "value": "- 30%"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "frontImage": "/images/img/3.webp",
+            "backImage": "/images/img/3b.webp",
+            "brand": "Come Zucchero Filato",
+            "name": "VOGLIA DI COLORI PASTELLO",
+            "price": 184.99,
+            "isInFavourites": false,
+            "badges": [
+                {
+                    "type": "discount",
+                    "value": "- 30%"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "frontImage": "/images/img/4.webp",
+            "backImage": "/images/img/4b.webp",
+            "brand": "Levi's",
+            "name": "TEE UNISEX",
+            "price": 29.99,
+            "isInFavourites": false,
+            "badges": [
+                {
+                    "type": "discount",
+                    "value": "- 50%"
+                },
+                {
+                    "type": "susteinability",
+                    "value": "Sostenibilità"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "frontImage": "/images/img/5.webp",
+            "backImage": "/images/img/5b.webp",
+            "brand": "Maya Deluxe",
+            "name": "STRIPE BODICE",
+            "price": 99.99,
+            "isInFavourites": false,
+            "badges": []
+        },
+        {
+            "id": 6,
+            "frontImage": "/images/img/6.webp",
+            "backImage": "/images/img/6b.webp",
+            "brand": "Esprit",
+            "name": "MAGLIONE - BLACK",
+            "price": 29.99,
+            "isInFavourites": false,
+            "badges": [
+                {
+                    "type": "susteinability",
+                    "value": "Sostenibilità"
+                }
+            ]
+        }
+    ]
+}

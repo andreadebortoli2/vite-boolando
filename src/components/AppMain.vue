@@ -1,6 +1,7 @@
 <script>
 import ProductCard from './ProductCard.vue';
-import { products } from '../data'
+// import { products } from '../data'
+import axios from 'axios';
 
 export default {
     name: 'AppMain',
@@ -9,8 +10,14 @@ export default {
     },
     data() {
         return {
-            products
+            products: []
         }
+    },
+    mounted() {
+        axios.get('http://localhost:3000/products').then(response => {
+            // console.log(response.data);
+            this.products = response.data
+        })
     }
 }
 </script>
