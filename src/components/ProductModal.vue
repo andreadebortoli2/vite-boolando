@@ -15,7 +15,7 @@ export default {
         return {
             susteinability: '',
             discount: 0,
-            active: '',
+            active: 1,
         }
     },
     methods: {
@@ -36,11 +36,12 @@ export default {
             <div class="modal-left">
 
                 <div class="product-images-slider">
-                    <img :src="active" alt="">
+                    <img v-if="active === 1" :src="frontImage" alt="">
+                    <img v-if="active === 2" :src="backImage" alt="">
                 </div>
             </div>
             <div class="modal-right">
-                <div class="modal-close" @click="show = false, active = ''">
+                <div class="modal-close" @click="show = false, discount = 0, active = 1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                         <!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License -
                             https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -60,8 +61,8 @@ export default {
                     </div>
                 </div>
                 <div class="thumb">
-                    <img class="front-image" :src="frontImage" alt="" @click="active = frontImage">
-                    <img class="back-image" :src="backImage" alt="" @click="active = backImage">
+                    <img class="front-image" :src="frontImage" alt="" @click="active = 1">
+                    <img class="back-image" :src="backImage" alt="" @click="active = 2">
                 </div>
             </div>
         </div>
