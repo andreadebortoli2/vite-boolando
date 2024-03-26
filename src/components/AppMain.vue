@@ -3,6 +3,7 @@ import ProductCard from './ProductCard.vue';
 // import { products } from '../data'
 // import axios from 'axios';
 import { store } from '../store'
+import axios from 'axios';
 
 export default {
     name: 'AppMain',
@@ -13,7 +14,18 @@ export default {
         return {
             // products: []
             store,
-            show: false
+            show: false,
+            modalProduct: ''
+        }
+    },
+    methods: {
+        showProductModal(id) {
+            this.show = !this.show;
+            console.log(id);
+            axios.get(`http://localhost:3000/products/${id}`).then(response => {
+                console.log(response.data);
+                this.modalProduct = response.data;
+            })
         }
     },
     mounted() {
@@ -30,14 +42,16 @@ export default {
     <main id="site_main">
         <div class="container">
 
-            <ProductCard :frontImage="product.frontImage" :backImage="product.backImage" :brand="product.brand"
-                :name="product.name" :price="product.price" :isInFavourites="product.isInFavourites"
-                :badges="product.badges" v-for="product in store.products" @changeShowStatus="show = !show" />
+            <ProductCard :id="product.id" :frontImage="product.frontImage" :backImage="product.backImage"
+                :brand="product.brand" :name="product.name" :price="product.price"
+                :isInFavourites="product.isInFavourites" :badges="product.badges" v-for="product in store.products"
+                @showProduct="showProductModal" />
 
         </div>
         <div class="modal" v-if="show === true">
             <div class="product-modal-card">
                 <div class="modal-close" @click="show = !show">X</div>
+                <div class="product-name">{{ modalProduct.name }}</div>
             </div>
 
         </div>
@@ -68,6 +82,10 @@ export default {
             color: orangered;
             background-color: palevioletred;
             width: fit-content;
+        }
+
+        .product-name {
+            color: white;
         }
     }
 }
