@@ -12,7 +12,8 @@ export default {
     data() {
         return {
             // products: []
-            store
+            store,
+            show: false
         }
     },
     mounted() {
@@ -31,10 +32,43 @@ export default {
 
             <ProductCard :frontImage="product.frontImage" :backImage="product.backImage" :brand="product.brand"
                 :name="product.name" :price="product.price" :isInFavourites="product.isInFavourites"
-                :badges="product.badges" v-for="product in store.products" />
+                :badges="product.badges" v-for="product in store.products" @changeShowStatus="show = !show" />
+
+        </div>
+        <div class="modal" v-if="show === true">
+            <div class="product-modal-card">
+                <div class="modal-close" @click="show = !show">X</div>
+            </div>
 
         </div>
     </main>
 </template>
 
-<style></style>
+<style>
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+
+    .product-modal-card {
+        width: 400px;
+        height: 400px;
+        background-color: darkslateblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .modal-close {
+            font-size: 3rem;
+            color: orangered;
+            background-color: palevioletred;
+            width: fit-content;
+        }
+    }
+}
+</style>
