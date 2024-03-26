@@ -4,3 +4,20 @@ $darker: rgba(0, 0, 0, 1);
 $discount: rgba(255, 0, 0, 1);
 $sustainability: rgba(0, 128, 0, 1);
 $price: rgba(255, 22, 18, 1);
+
+@mixin susteinability {
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color: $lighter;
+    background-color: $sustainability;
+    padding: 0.25rem;
+}
+
+@mixin discount {
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color: $lighter;
+    background-color: $discount;
+    padding: 0.25rem;
+    margin-right: 0.25rem;
+}

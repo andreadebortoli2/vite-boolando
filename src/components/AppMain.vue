@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         showProductModal(id) {
-            this.showModal = !this.showModal;
+            this.showModal = true;
             // console.log(id);
             axios.get(`http://localhost:3000/products/${id}`).then(response => {
                 // console.log(response.data);

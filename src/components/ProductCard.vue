@@ -53,7 +53,7 @@ export default {
         <div class="article_info">
 
             <div>{{ brand }}</div>
-            <h4 @click="$emit('showProduct', id)">{{ name }}</h4>
+            <h4 class="product-name" @click="$emit('showProduct', id)">{{ name }}</h4>
             <div class="price">
                 <div class="current_price">{{ finalPrice(badges, price, discount) }} &euro;</div>
                 <div class="older_price" v-if="discount !== 0">{{ price }} &euro;</div>

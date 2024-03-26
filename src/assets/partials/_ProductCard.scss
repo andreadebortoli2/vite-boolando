@@ -51,25 +51,20 @@
             display: flex;
 
             .discount {
-                font-size: 0.8rem;
-                font-weight: bolder;
-                color: $lighter;
-                background-color: $discount;
-                padding: 0.25rem;
-                margin-right: 0.25rem;
+                @include discount
             }
 
             .susteinability {
-                font-size: 0.8rem;
-                font-weight: bolder;
-                color: $lighter;
-                background-color: $sustainability;
-                padding: 0.25rem;
+                @include susteinability
             }
         }
     }
 
     .article_info {
+
+        .product-name:hover {
+            cursor: pointer;
+        }
 
         .price {
             display: flex;

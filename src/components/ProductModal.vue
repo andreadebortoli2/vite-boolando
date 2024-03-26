@@ -10,7 +10,23 @@ export default {
         price: Number,
         isInFavourites: Boolean,
         badges: Array,
-    }
+    },
+    data() {
+        return {
+            susteinability: '',
+            discount: 0,
+            active: '',
+        }
+    },
+    methods: {
+        finalPrice(badges, price, discount) {
+            this.discountFormattation(badges);
+            return (price - (price * discount / 100)).toFixed(2);
+        },
+        discountFormattation(badges) {
+            badges.filter(badge => badge.type === 'discount' ? this.discount = badge.value.replace(/[-%]/g, '') : 0);
+        },
+    },
 }
 </script>
 
@@ -18,14 +34,13 @@ export default {
     <div class="modal" v-if="show === true">
         <div class="product-modal-card">
             <div class="modal-left">
-                <div class="thumb">
-                    <img class="thumb front-image" :src="frontImage" alt="">
-                    <img class="thumb back-image" :src="backImage" alt="">
+
+                <div class="product-images-slider">
+                    <img :src="active" alt="">
                 </div>
-                <img class="active-image" src="" alt="">
             </div>
             <div class="modal-right">
-                <div class="modal-close" @click="show = !show">
+                <div class="modal-close" @click="show = false, active = ''">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                         <!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License -
                             https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -34,11 +49,20 @@ export default {
                     </svg>
                 </div>
                 <div class="product-brand">{{ brand }}</div>
-                <div class="product-name">{{ name }}</div>
-                <div class="susteinability"></div>
-                <div class="price">{{ price }} &euro;</div>
-                <div class="discount"></div>
-                <div class="final-price"></div>
+                <h4 class="product-name">{{ name }}</h4>
+                <div class="product-info">
+                    <div class="product-badges">
+                        <div v-for=" badge  in  badges " :class="badge.type">{{ badge.value }}</div>
+                    </div>
+                    <div class="product-price">
+                        <div class="price" v-if="discount !== 0">{{ price }} &euro;</div>
+                        <div class="final-price">{{ finalPrice(badges, price, discount) }} &euro;</div>
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img class="front-image" :src="frontImage" alt="" @click="active = frontImage">
+                    <img class="back-image" :src="backImage" alt="" @click="active = backImage">
+                </div>
             </div>
         </div>
     </div>
